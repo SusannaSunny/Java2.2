@@ -1,3 +1,5 @@
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -9,6 +11,7 @@ public class Main {
         int sumBoard = 1000;
         int sumAdd = 1100;
         int finBalance;
+        int sumBonus;
 
         // Условным оператором проверяете превысила ли
         // сумма пополнения порог и для этих двух разных
@@ -20,6 +23,14 @@ public class Main {
         } else {
             finBalance = startBalance + sumAdd;
         }
-        System.out.print(finBalance);
+
+        if (sumAdd < 1000) {
+            sumBonus = 0;
+        } else {
+            sumBonus = sumAdd / 100;
+        }
+
+        System.out.println("Баланс: " + finBalance);
+        System.out.println("Количество бонусов: " + sumBonus);
     }
 }
